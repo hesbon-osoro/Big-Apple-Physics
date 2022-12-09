@@ -1,0 +1,121 @@
+/*
+   New Perspectives on HTML and CSS, 7th Edition
+   Tutorial 8
+   Case Problem 2
+
+   Big Apple Physics Animation Styles
+   Author: Hesbon Osoro
+   Date: 12/9/22 
+
+   Filename: ba_animate.css
+
+*/
+
+/* Transition Styles */
+
+nav a {
+  background: url("ba_target.png") center no-repeat;
+
+  background-size: 0%;
+
+  color: rgba(253, 240, 133, 1);
+  transition: background-size 0.3s, color 0.8s;
+}
+
+nav a:hover {
+  background-size: 100%;
+  color: rgb(244, 130, 130);
+}
+
+/* Animation Styles */
+@keyframes moveRed {
+  0% {
+    left: 0px;
+    filter: drop-shadow(-40px 20px 25px rgb(51, 51, 51));
+  }
+  49% {
+    transform: scaleX(1);
+  }
+  50% {
+    left: 380px;
+    filter: drop-shadow(0px 0px 0px rgb(51, 51, 51));
+    transform: scaleX(0.4);
+  }
+  51% {
+    transform: scaleX(1);
+  }
+  100% {
+    left: 0px;
+    filter: drop-shadow(-40px 20px 25px rgb(51, 51, 51));
+  }
+}
+
+@keyframes moveBlue {
+  0% {
+    right: 0px;
+    filter: drop-shadow(40px 20px 25px rgb(51, 51, 51));
+  }
+  49% {
+    transform: scaleX(1);
+  }
+  50% {
+    right: 380px;
+    filter: drop-shadow(0px 0px 0px rgb(51, 51, 51));
+    transform: scaleX(0.4);
+  }
+  51% {
+    transform: scaleX(1);
+  }
+  100% {
+    right: -700px;
+    filter: drop-shadow(120px 20px 25px rgb(51, 51, 51));
+  }
+}
+
+@keyframes showText {
+  0% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hideText {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#redBall {
+  animation: moveRed 5s linear infinite;
+}
+
+#blueBall {
+  animation: moveBlue 5s linear infinite;
+}
+
+#redSpeed1,
+#blueSpeed1 {
+  animation: hideText 5s linear infinite;
+}
+
+#redSpeed2,
+#blueSpeed2 {
+  animation: showText 5s linear infinite;
+}
